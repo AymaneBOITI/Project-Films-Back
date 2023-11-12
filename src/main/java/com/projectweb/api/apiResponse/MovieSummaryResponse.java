@@ -1,16 +1,14 @@
-package com.projectweb.api.service;
+package com.projectweb.api.apiResponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 
-public class MovieSummary {
+public class MovieSummaryResponse {
 
     @JsonProperty("id")
     @Schema(description = "Unique identifier of the movie")
