@@ -127,7 +127,7 @@ public class MovieService {
 
             if (response.getBody() != null && response.getBody().getBackdrops() != null) {
                 return response.getBody().getBackdrops().stream()
-                        .map(ImagesResponse.Image::getFilePath)
+                        .map(ImageDTO::getFilePath)
                         .collect(Collectors.toList());
             } else {
                 return Collections.emptyList();
