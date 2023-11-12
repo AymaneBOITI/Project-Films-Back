@@ -13,7 +13,6 @@ public class RestTemplateConfig {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
 
-        // Add the logging interceptor to the RestTemplate instance
         restTemplate.setInterceptors(Collections.singletonList(new LoggingRequestInterceptor()));
 
         return restTemplate;

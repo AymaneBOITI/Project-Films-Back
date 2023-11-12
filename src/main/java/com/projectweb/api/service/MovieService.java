@@ -1,7 +1,5 @@
 package com.projectweb.api.service;
 import com.projectweb.api.apiResponse.*;
-import com.projectweb.api.apiResponse.MovieSummaryResponse;
-import com.projectweb.api.apiResponse.VideosResponse;
 import com.projectweb.api.dto.*;
 
 import org.slf4j.Logger;
@@ -167,11 +165,13 @@ public class MovieService {
     }
     public List<MovieSummaryDTO> getMoviesBySearch(String query, String language, int page) {
         try{
+
             String url = UriComponentsBuilder.fromHttpUrl(tmdbBaseUrl + "/search/movie")
                     .queryParam("query", query)
                     .queryParam("language", language)
                     .queryParam("page", page)
-                    .toUriString();
+                    .build(false).
+                    toUriString();
 
             ResponseEntity<MovieListApiResponse> response = restTemplate.exchange(
                     url, HttpMethod.GET, new HttpEntity<>(createHeaders()), MovieListApiResponse.class);
