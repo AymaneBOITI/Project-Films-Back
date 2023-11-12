@@ -33,7 +33,7 @@ public class MovieController {
     }
 
 
-    @GetMapping("/details/{movieId}")
+    @GetMapping("/{movieId}")
     @Operation(summary = "Get movie details",
             description = "Retrieve detailed information about a movie",
             responses = {
