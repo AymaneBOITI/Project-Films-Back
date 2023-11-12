@@ -65,7 +65,6 @@ public class MovieService {
 
             ResponseEntity<MovieDetailsDTO> response = restTemplate.exchange(
                     url, HttpMethod.GET, new HttpEntity<>(createHeaders()), MovieDetailsDTO.class);
-
             return response.getBody();
         }catch (RestClientException e) {
             logger.error("Error fetching movie details from TMDB for movie ID " + movieId, e);
@@ -180,10 +179,10 @@ public class MovieService {
             return response.getBody().getResults().stream()
                     .map(this::convertToMovieSummaryDTO)
                     .collect(Collectors.toList());
-    } catch (RestClientException e) {
-        logger.error("Error searching movies from TMDB with query: " + query, e);
-        throw new RuntimeException("Error searching movies from TMDB", e);
-    }
+        } catch (RestClientException e) {
+            logger.error("Error searching movies from TMDB with query: " + query, e);
+            throw new RuntimeException("Error searching movies from TMDB", e);
+        }
     }
     private MovieSummaryDTO convertToMovieSummaryDTO(MovieSummaryResponse movieSummaryResponse) {
         try {
