@@ -1,12 +1,10 @@
 package com.projectweb.api.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @Schema(description = "Data Transfer Object for movie summary")
 public class MovieSummaryDTO {
 

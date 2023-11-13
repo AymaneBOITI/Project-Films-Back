@@ -1,11 +1,10 @@
 package com.projectweb.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+
+@Data
 public class ImageDTO {
     @JsonProperty("file_path")
     private String filePath;

@@ -2,13 +2,11 @@ package com.projectweb.api.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import java.time.LocalDate;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @Schema(description = "Data Transfer Object for detailed movie information")
 public class MovieDetailsDTO {
 
@@ -60,8 +58,7 @@ public class MovieDetailsDTO {
     @Schema(description = "List of paths to images related to the movie")
     private List<String> imagePaths;
 
-    @Getter
-    @Setter
+    @Data
     public static class Genre {
         private Long id;
         private String name;

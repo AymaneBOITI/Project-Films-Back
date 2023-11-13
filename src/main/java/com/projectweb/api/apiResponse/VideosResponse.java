@@ -1,12 +1,10 @@
 package com.projectweb.api.apiResponse;
 
 import com.projectweb.api.dto.VideoDTO;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class VideosResponse {
     private List<VideoDTO> results;
 }

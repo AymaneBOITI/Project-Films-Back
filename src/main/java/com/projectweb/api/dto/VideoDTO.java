@@ -1,11 +1,9 @@
 package com.projectweb.api.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import io.swagger.v3.oas.annotations.media.Schema;
 
-@Getter
-@Setter
+@Data
 @Schema(description = "Data structure representing a video, such as a trailer")
 public class VideoDTO {
     @Schema(description = "Key of the video on its hosting platform")
