@@ -97,7 +97,7 @@ public class MovieController {
     }
 
     private String validateLanguage(String language) {
-        if (language == null || (!language.equals("en-US") && !language.equals("fr-FR"))) {
+        if (!"en-US".equals(language) && !"fr-FR".equals(language)) {
             return DEFAULT_LANGUAGE;
         }
         return language;
