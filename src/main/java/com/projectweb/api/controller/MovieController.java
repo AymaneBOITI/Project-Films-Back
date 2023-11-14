@@ -19,6 +19,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/movies")
 @Tag(name = "Movies", description = "API endpoints for Movies")
 public class MovieController {
